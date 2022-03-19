@@ -262,3 +262,9 @@ function updateRole() {
             })
           });
         }
+
+// exit the app
+function exitApp() {
+    connection.end();
+};
+
