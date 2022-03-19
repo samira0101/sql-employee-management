@@ -18,3 +18,11 @@ VALUES
 ('Programmer', 80000, 5),
 ('Sales Rep', 20000, 6);
 
+INSERT INTO employee (first_name, last_name, role_id, manager_id)
+VALUES 
+('Mary', 'Stuart', 1, 455),
+('John', 'Johnson', 2, 234),
+('Maria', 'Kowalska', 3, 456),
+('Mustafa', 'Abehunde', 4, 123),
+('Shahid', 'Khan', 5, 789),
+('Samantha', 'Walker', 6, 191);
