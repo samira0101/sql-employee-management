@@ -233,3 +233,32 @@ function addRole() {
         })
     })
 };
+
+// updating a role
+function updateRole() {
+        inquirer
+        .prompt([
+          {
+            type: "input",
+            message: "Enter the employee's ID you want to be updated",
+            name: "updateEmploy"
+          },
+          {
+            type: "input",
+            message: "Enter the new role ID for that employee",
+            name: "newRole"
+          }
+        ])
+        .then(function (res) {
+            const updateEmploy = res.updateEmploy;
+            const newRole = res.newRole;
+            const queryUpdate = `UPDATE employee SET role_id = "${newRole}" WHERE id = "${updateEmploy}"`;
+            connection.query(queryUpdate, function (err, res) {
+              if (err) {
+                throw err;
+              }
+              console.table(res);
+              options();
+            })
+          });
+        }
